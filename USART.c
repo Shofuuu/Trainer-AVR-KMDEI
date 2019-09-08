@@ -43,7 +43,7 @@ void USART_writeln(char* s){
 
 int main(){
 	USART_init(9600);
-	USART_writes("KMDEI Keluarga Mahasiswa Diploma Elektronika dan Instrumentasi\r\n");
+	USART_writeln("KMDEI Keluarga Mahasiswa Diploma Elektronika dan Instrumentasi");
 
 	while(1);
 }
