@@ -31,6 +31,16 @@ void USART_writes(char* s){
 	}
 }
 
+void USART_writeln(char* s){
+	while(*s){
+		USART_write(*s);
+		s++;
+	}
+	for(int x=0;x<strlen(&s);x++)
+		USART_write('\r');
+	USART_write('\n');
+}
+
 int main(){
 	USART_init(9600);
 	USART_writes("KMDEI Keluarga Mahasiswa Diploma Elektronika dan Instrumentasi\r\n");
