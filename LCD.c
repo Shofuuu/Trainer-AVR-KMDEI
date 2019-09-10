@@ -116,8 +116,6 @@ void LCD4_move(unsigned char x, unsigned char y){
 }
 
 int main(){
-	DDRD |= (1<<7);
-
 	LCD4_init();
 
 	LCD4_clear();
