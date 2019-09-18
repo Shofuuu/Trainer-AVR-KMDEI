@@ -42,33 +42,22 @@ void segment_number(unsigned char num){
 }
 
 void segment_write(int num){
-	if(num>=10){
 		segment_select(0);
 		segment_number(num/1000);
 		_delay_ms(1);
+
 		segment_select(1);
 		segment_number(((num-(num/1000)*1000)/100));
 		_delay_ms(1);
+
 		segment_select(2);
 		segment_number(((num-(num/100)*100)/10));
 		_delay_ms(1);
+
 		segment_select(3);
-		segment_number((num-(num/10)*10)/1);
+		if(num>=10) segment_number(((num-(num/10)*10)/1));
+		else segment_number(num);
 		_delay_ms(1);
-	}else if(num>=0){
-		segment_select(0);
-		segment_number(0);
-		_delay_ms(1);
-		segment_select(1);
-		segment_number(0);
-		_delay_ms(1);
-		segment_select(2);
-		segment_number(0);
-		_delay_ms(1);
-		segment_select(3);
-		segment_number(num);
-		_delay_ms(1);
-	}
 }
 
 int main(){
