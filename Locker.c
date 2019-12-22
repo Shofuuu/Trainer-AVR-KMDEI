@@ -55,6 +55,7 @@ int main(){
 			
 			if((pos-6) > 3){
 				LCD4_clear();
+				memset(pass,0,strlen(pass));
 				status = "overflow";
 			}
 			
